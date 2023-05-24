@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles-page-1.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+    <script defer src="./script.js"></script>
 </head>
 <body>
     <div id="timer">
@@ -21,9 +22,23 @@
         <p id="player-name">Player 1's Turn</p>
     </div>
 
-    <p>Union</p>
+    <div class="board" id="board">
+        <div class="cell" data-cell><button type="button" id="btn-cell" class="btn-cell"></button></div>
+        <div class="cell" data-cell><button type="button" id="btn-cell" class="btn-cell"></button></div>
+        <div class="cell" data-cell><button type="button" id="btn-cell" class="btn-cell"></button></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
 
+    <div class="winning-message" id="winning-message">
+        <div data-winning-message></div>
+        <button id="restart">Restart</button>
+    </div>
 
-    <script src="./script.js"></script>
+    
 </body>
 </html>

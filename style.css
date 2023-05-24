@@ -1,6 +1,12 @@
+:root {
+    --height: 100%;
+    --width: 100%;
+    --white-color: #FFFFFF;
+}
+
 html, body{
-    height: 100%;
-    width: 100%;
+    height: var(--height);
+    width: var(--width);
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -13,8 +19,9 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     font-family: 'Montserrat', sans-serif;
-    color: #FFFFFF;
+    color: var(--white-color);
 }
+
 
 .background-div {
     position: relative;
@@ -22,7 +29,7 @@ body {
 
 .background-x {
     position: relative;
-    margin-top: 83px;
+    margin-top: calc(var(--height)/5);
 }
 
 .background-o {
@@ -39,19 +46,20 @@ body {
     width: 276px;
     height: 51px;
     font-weight: 900;
-    font-size: 42px;
+    font-size: 43px;
     text-align: center;
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     margin-left: -138px;
+    margin-top: -25.5px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .container {
     position: absolute;
     justify-content: center;
-    top: 70%;
+    top: 65%;
     left: 50%;
     margin-left: -178px;
 }
@@ -73,50 +81,13 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    margin: 70px auto;
+    margin: calc(var(--height)/4) auto;
 }
 
 a{
     border: none;
     cursor: pointer;
     background-color: inherit;
-}
-
-#timer {
-    border: solid;
-    border-radius: 100px;
-    border-color: #FFFFFF;
-    background-color: #FFFFFF;
-    color: #000000;
-    font-weight: 500px;
-    font-size: 30px;
-    width: 149px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    margin-left: -75px;
-}
-
-#clock {
-    margin: auto;
-}
-
-#player-turn {
-    font-weight: 700px;
-    font-size: 36px;
-    width: 325px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    margin-left: -160.5px;
 }
 
 
