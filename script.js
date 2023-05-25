@@ -1,54 +1,19 @@
-const start =  document.getElementById("start")
-const stop =  document.getElementById("stop")
-const time = document.getElementById("clock")
+//Script for player One Symbol
+const btnX = document.getElementById("x-btn")
+const btnO = document.getElementById("o-btn")
 
-let [miliseconds, seconds, minutes] = [0, 0, 0]
-let timeRef = document.getElementById("clock")
-let int = null
 
-stop.addEventListener("click", function(){
-    clearInterval(int)
-})
+function chooseSymbolX(){
+    sessionStorage.setItem("startX", 1)
+    window.open("./play-page.html", "_self")
+}
 
-start.addEventListener("click", function(){
-    if(int !== null){
-        clearInterval(int)
-    }
-
-    int = setInterval(displayTimer, 10)
-})
-
-function displayTimer(){
-    miliseconds += 10
-
-    if(miliseconds === 1000){
-        miliseconds = 0
-        seconds++
-        if(seconds === 60){
-            seconds = 0
-            minutes++
-        }
-    }
-
-    let m = minutes < 10 ? "0" + minutes : minutes
-    let s = seconds < 10 ? "0" + seconds : seconds
-    let ms = miliseconds < 10 ? "0" + miliseconds/10 : miliseconds/10
-
-    timeRef.innerHTML = `${m}:${s}:${ms}`
+function chooseSymbolO(){
+    sessionStorage.setItem("startX", 0)
+    window.open("./play-page.html", "_self")
 }
 
 
-const player = document.getElementById("player")
-const playerTurn = document.getElementById("player-name")
-let count = 0
+btnX.addEventListener("click", chooseSymbolX)
 
-
-player.addEventListener("click", function(){
-    if(count === 0){
-        playerTurn.innerHTML = "Player 2's Turn"
-        count++
-    }else{
-        playerTurn.innerHTML = "Player 1's Turn"
-        count--
-    }
-})
+btnO.addEventListener("click", chooseSymbolO)
