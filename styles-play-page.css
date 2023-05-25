@@ -1,0 +1,179 @@
+:root {
+    --height: 100%;
+    --width: 100%;
+    --white-color: #FFFFFF;
+    --cell-size: 85px;
+    --mark-size: calc(var(--cell-size));
+}
+
+
+html, body{
+    height: var(--height);
+    width: var(--width);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    box-sizing: border-box;
+    position: relative;
+    background: linear-gradient(120deg, #00D2FF, #3A7BD5);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white-color);
+}
+
+#timer {
+    border: solid;
+    border-radius: 100px;
+    border-color: var(--white-color);
+    background-color: var(--white-color);
+    color: #000000;
+    font-weight: 500px;
+    font-size: 30px;
+    width: 149px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-left: -75px;
+}
+
+#clock {
+    margin: auto;
+}
+
+#player-turn {
+    font-weight: 700px;
+    font-size: 36px;
+    width: 325px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -160.5px;
+}
+
+
+.board {
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+    width: 290px;
+    top: 50%;
+    left: 50%;
+    margin-left: -145px;
+    border: 1px solid var(--white-color);
+    border-radius: 20px;
+    background-color: var(--white-color);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: var(--white-color);
+    border: 1px solid #C1C1C1;
+    opacity: 0.75;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+    margin-top: 25px;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+    margin-left: 28px;
+}
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+    margin-right: 28px;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+
+
+.img-x {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-image: url("./assets/player/player-x.svg");
+}
+
+.img-o {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-image: url("./assets/player/player-o.svg");
+}
+
+.img-none {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-image: url("");
+}
+
+
+
+
+
+.btn-cell {
+    width: calc(var(--mark-size) * 0.95);
+    height: calc(var(--mark-size) * 0.95);
+    background-color: var(--white-color);
+    border: none;
+}
+
+
+.winning-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    flex-direction: column;
+}
+
+.winning-message button {
+    font-size: 1.5rem;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    margin: 0.35em;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.winning-message button:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.winning-message.show {
+    display: flex;
+}
+
