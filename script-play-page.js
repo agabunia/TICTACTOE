@@ -124,8 +124,7 @@ function handleClick(e){
     const currentClass = startX ? classX : classO
     markingSymbol(oneCell, currentClass)
 
-    playerTurn = numberOfTurn % 2 == 1 ? 1 : 2
-    playerName.innerText = `Player ${playerTurn}'s Turn`
+    
 
     if(checkWin(currentClass)){
         endGame(false)
@@ -135,6 +134,10 @@ function handleClick(e){
         switchSymbol()
         numberOfTurn++
     }
+
+    playerTurn = numberOfTurn % 2 == 1 ? 1 : 2
+    playerName.innerText = `Player ${playerTurn}'s Turn`
+
 }
 
 function markingSymbol(oneCell, currentClass){
