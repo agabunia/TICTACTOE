@@ -6,7 +6,6 @@
     --mark-size: calc(var(--cell-size));
 }
 
-
 html, body{
     height: var(--height);
     width: var(--width);
@@ -39,7 +38,7 @@ body {
     justify-content: center;
     text-align: center;
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 50%;
     margin-left: -75px;
 }
@@ -49,7 +48,7 @@ body {
 }
 
 #player-turn {
-    font-weight: 700px;
+    font-weight: 700;
     font-size: 36px;
     width: 325px;
     height: 44px;
@@ -57,11 +56,10 @@ body {
     justify-content: center;
     text-align: center;
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 50%;
     margin-left: -160.5px;
 }
-
 
 .board {
     position: absolute;
@@ -86,44 +84,45 @@ body {
     background-color: var(--white-color);
     border: 1px solid #C1C1C1;
     opacity: 0.75;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
 }
 
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
     border-top: none;
-    margin-top: 25px;
 }
 
 .cell:nth-child(3n + 1) {
     border-left: none;
-    margin-left: 28px;
 }
 
 .cell:nth-child(3n + 3) {
     border-right: none;
-    margin-right: 28px;
 }
 
 .cell:last-child,
 .cell:nth-child(8),
 .cell:nth-child(7) {
     border-bottom: none;
-    margin-bottom: 20px;
 }
-
-
 
 .img-x {
     width: var(--mark-size);
     height: var(--mark-size);
     background-image: url("./assets/player/player-x.svg");
+    background-position: center;
 }
 
 .img-o {
     width: var(--mark-size);
     height: var(--mark-size);
     background-image: url("./assets/player/player-o.svg");
+    background-position: center;
 }
 
 .img-none {
@@ -132,17 +131,12 @@ body {
     background-image: url("");
 }
 
-
-
-
-
 .btn-cell {
     width: calc(var(--mark-size) * 0.95);
     height: calc(var(--mark-size) * 0.95);
     background-color: var(--white-color);
     border: none;
 }
-
 
 .winning-message {
     display: none;
@@ -177,3 +171,76 @@ body {
     display: flex;
 }
 
+
+@media (min-width: 770px) {
+    #player-turn {
+        top: 20%;
+    }
+
+    #player-name {
+        font-size: 50px;
+        width: 370px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        margin-left: -185px;
+    }
+
+    #timer {
+        border: solid;
+        border-radius: 100px;
+        border-color: var(--white-color);
+        background-color: var(--white-color);
+        color: #000000;
+        font-weight: 500;
+        font-size: 30px;
+        width: 250px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        margin-left: -125px;
+    }
+
+    #clock{
+        font-size: 45px;
+    }
+
+    .board {
+        position: absolute;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+        grid-template-columns: repeat(3, auto);
+        width: 400px;
+        height: 400px;
+        top: 45%;
+        left: 50%;
+        margin-left: -201px;
+        border: 1px solid var(--white-color);
+        border-radius: 20px;
+        background-color: var(--white-color);
+    }
+
+    .cell {
+        --cell-size: 105px;
+        width: var(--cell-size);
+        height: var(--cell-size);
+        background-color: var(--white-color);
+        border: 1px solid #C1C1C1;
+        opacity: 0.75;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+    }
+}
